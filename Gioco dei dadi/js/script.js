@@ -39,3 +39,11 @@ const startPlay = document.getElementById('diceStart');
 let userDice = Math.floor((Math.random() * 6 + 1));
 let computerDice = Math.floor((Math.random() * 6 + 1));
 
+// DEFINISCO LE CONDIZIONI DI VITTORIA O DI SCONFITTA
+if (userDice > computerDice){
+    console.log('Hai vinto')
+} else if (userDice < computerDice){
+    console.log('Hai perso')
+} else {
+    console.log('Pareggio')
+}
