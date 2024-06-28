@@ -26,9 +26,9 @@ SCOMPOSIZIONE IN SOTTOPROBLEMI
 >Preparo un'array
     >Nell'array definisco n email
 >Recupero il pulsante (per verificare se l'email è presente nell'array) dal DOM
-    >>Definisco una variabile di controllo con un booleano 
     >>Associo il pulsante recuperato nel DOM ad una funzione con un eventlistener
         >>>Dentro la funzione recupero il valore inserito nel campo input 
+        >>>Definisco una variabile di controllo con un booleano 
         >>>Definisco un ciclo for per confrontare se uno degli elementi dell'array al valore inserito nell'input 
         >>>Definisco una condizione if per verificare se il valore che sto ciclando dell'array corrisponde al valore inserito nell'input
         >>>Preparo le condizioni per i diversi messaggi di output 
