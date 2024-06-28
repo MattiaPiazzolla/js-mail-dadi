@@ -32,3 +32,6 @@ logInButton.addEventListener('click', function(){
 
 })
 
+// RECUPERO IL PULSANTE PER INIZIARE A "GIOCARE"
+const startPlay = document.getElementById('diceStart');
+
