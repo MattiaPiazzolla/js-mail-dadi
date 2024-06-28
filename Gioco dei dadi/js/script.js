@@ -35,15 +35,20 @@ logInButton.addEventListener('click', function(){
 // RECUPERO IL PULSANTE PER INIZIARE A "GIOCARE"
 const startPlay = document.getElementById('diceStart');
 
-// DEFINISCO LE VARIABILI PER IL LANCIO DEI DADI
-let userDice = Math.floor((Math.random() * 6 + 1));
-let computerDice = Math.floor((Math.random() * 6 + 1));
 
-// DEFINISCO LE CONDIZIONI DI VITTORIA O DI SCONFITTA
-if (userDice > computerDice){
-    console.log('Hai vinto')
-} else if (userDice < computerDice){
-    console.log('Hai perso')
-} else {
-    console.log('Pareggio')
-}
+// DETERMINO CHE GLI EVENTI AVVENGANO AL CLICK DEL PULSANTE
+startPlay.addEventListener('click', function(){
+    // DEFINISCO LE VARIABILI PER IL LANCIO DEI DADI
+    let userDice = Math.floor((Math.random() * 6 + 1));
+    let computerDice = Math.floor((Math.random() * 6 + 1));
+    
+    // DEFINISCO LE CONDIZIONI DI VITTORIA O DI SCONFITTA
+    if (userDice > computerDice){
+        console.log('Hai vinto')
+    } else if (userDice < computerDice){
+        console.log('Hai perso')
+    } else {
+        console.log('Pareggio')
+    }
+
+})
