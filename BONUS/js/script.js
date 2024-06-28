@@ -7,6 +7,8 @@ const logInButton = document.getElementById('logIn');
 // RECUPERO DIV PER MESSAGGII DI OUTPUT
 let logged = document.getElementById('welcomeMsg')
 let notLogged = document.getElementById('notRegistered')
+// DETERMINO UNA VARIABILE DI CONTROLLO PER IL GIOCO 
+let emailValidated = false;
 // DETERMINO LE ISTRUZIONI PER UN EVENTO DEL PULSANTE
 function emailVeify() {
     // RECUPERO IL VALORE ALL'INTERNO DEL CAMPO INPUT
@@ -24,9 +26,11 @@ function emailVeify() {
             console.log("Accesso Eseguito")
             logged.classList.remove('d-none')
             document.getElementById('log-in-card').classList.add('d-none')
+            emailValidated = true;
         } else {
             console.log("Accesso Negato")
             notRegistered.innerHTML=`<p class="d-block text-center text-danger">l'email utilizzata non risulta registrata</p>`
+            emailValidated = false;
         }
     }
 
@@ -141,6 +145,8 @@ startPlay.addEventListener('click', play)
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        play();
+        if (emailValidated){
+            play();
+        }
     }
 });
