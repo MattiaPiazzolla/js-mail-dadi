@@ -32,7 +32,6 @@ SCOMPOSIZIONE IN SOTTOPROBLEMI
         >>>Definisco un ciclo for per confrontare se uno degli elementi dell'array al valore inserito nell'input 
         >>>Definisco una condizione if per verificare se il valore che sto ciclando dell'array corrisponde al valore inserito nell'input
         >>>Preparo le condizioni per i diversi messaggi di output 
-
 <!-- DADI -->
 >Preparo una struttura nell'html da cui andare ad attingere nel js
 >Recupero il pulsante (per il lancio dei dadi) dal DOM
