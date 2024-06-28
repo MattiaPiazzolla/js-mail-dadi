@@ -32,7 +32,7 @@ function emailVeify() {
 
 }
 
-// CLICK E ENTER COME TRIGGER PER L'INPUT DELL'EMAIL
+// CLICK ED ENTER COME TRIGGER PER L'INPUT DELL'EMAIL
 logInButton.addEventListener('click', emailVeify)
 
 document.addEventListener('keydown', function (event) {
@@ -50,10 +50,66 @@ const startPlay = document.getElementById('diceStart');
 let gamePlayed = false;
 
 // DETERMINO CHE GLI EVENTI AVVENGANO AL CLICK DEL PULSANTE
-startPlay.addEventListener('click', function(){
+function play(){
     // DEFINISCO LE VARIABILI PER IL LANCIO DEI DADI
     let userDice = Math.floor((Math.random() * 6 + 1));
     let computerDice = Math.floor((Math.random() * 6 + 1));
+    let userResultIcon = '<i class="fa-solid fa-dice"></i>'
+    let computerResultIcon
+    // RENDO VISIBILI LE ICONE 
+    document.getElementById('iconsGame').classList.remove('d-none')
+    // DEFINISCO LE CONDIZIONE PER L'OUTPUT DEL DADO CON IL NUMERO GIUSTO USER
+    if (userDice === 1) {
+        userResultIcon = '<i class="fa-solid fa-dice-one"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+    } else if (userDice === 2) {
+        userResultIcon = '<i class="fa-solid fa-dice-two"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+
+    } else if (userDice === 3) {
+        userResultIcon = '<i class="fa-solid fa-dice-three"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+
+    } else if (userDice === 4) {
+        userResultIcon = '<i class="fa-solid fa-dice-four"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+
+    } else if (userDice === 5) {
+        userResultIcon = '<i class="fa-solid fa-dice-five"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+
+    } else {
+        userResultIcon = '<i class="fa-solid fa-dice-six"></i>'
+        document.getElementById('userResults').innerHTML=`${userResultIcon}`
+
+    }
+
+    // DEFINISCO LE CONDIZIONE PER L'OUTPUT DEL DADO CON IL NUMERO GIUSTO USER
+    if (computerDice === 1) {
+        computerResultIcon = '<i class="fa-solid fa-dice-one"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+    } else if (computerDice === 2) {
+        computerResultIcon = '<i class="fa-solid fa-dice-two"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+
+    } else if (computerDice === 3) {
+        computerResultIcon = '<i class="fa-solid fa-dice-three"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+
+    } else if (computerDice === 4) {
+        computerResultIcon = '<i class="fa-solid fa-dice-four"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+
+    } else if (computerDice === 5) {
+        computerResultIcon = '<i class="fa-solid fa-dice-five"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+
+    } else {
+        computerResultIcon = '<i class="fa-solid fa-dice-six"></i>'
+        document.getElementById('computerResults').innerHTML=`${computerResultIcon}`
+
+    }
+    
 
     // DEFINISCO LE CONDIZIONI DI VITTORIA O DI SCONFITTA
     if (userDice > computerDice){
@@ -77,4 +133,14 @@ startPlay.addEventListener('click', function(){
         // non capisco come posso triggerarlo subito dopo il primo lancio
         gamePlayed = true 
     }
-})
+}
+
+// CLICK ED ENTER COME TRIGGER PER GIOCARE
+startPlay.addEventListener('click', play)
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        play();
+    }
+});
