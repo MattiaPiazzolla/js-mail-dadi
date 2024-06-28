@@ -4,5 +4,6 @@ let emailList = ["mattia@boolean.com", "doubleorquits@luckydice.com", "diceshake
 const logInButton = document.getElementById('logIn');
 // DETERMINO LE ISTRUZIONI PER UN EVENTO DEL PULSANTE
 logInButton.addEventListener('click', function(){
-    
+    // RECUPERO IL VALORE ALL'INTERNO DEL CAMPO INPUT
+    let emailInput = document.getElementById('emailInput').ariaValueMax.toLocaleLowerCase();
 })
