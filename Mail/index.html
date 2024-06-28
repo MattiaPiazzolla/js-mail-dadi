@@ -8,16 +8,24 @@
     <title>MAIL</title>
 </head>
 <body>
-    <div id="log-in-card">
-        <h2>Log in senza password</h2>
-        <label for="email-input">Accedi con la tua mail</label>
-        <input type="email" id="emailInput" placeholder="Inserisci la tua email">
-        <button class="btn btn-outline-success" id="logIn">Accedi</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 position-relative vh-100 w-100">
+                <div id="log-in-card" class="card p-5 text-center" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="highroller@boolean.com funziona!">
+                    <h2 class="">Log in senza password</h2>
+                    <div class="input-container d-flex">
+                        <input type="email" id="emailInput" class="text-center w-50" placeholder="Inserisci la tua email">
+                        <button type="button" class="btn btn-success w-50" id="logIn">Accedi</button>
+                    </div>
+                    <p id="notRegistered"></p>
+                </div>
+                <div id="welcomeMsg"></div>
+            </div>
+        </div>
     </div>
-    <div id="welcomeMsg">
-
-    </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>
