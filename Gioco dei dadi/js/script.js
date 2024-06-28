@@ -22,7 +22,7 @@ logInButton.addEventListener('click', function(){
         // MESSAGGIO DI OUTPUT
         if (registeredUser === true){
             console.log("Accesso Eseguito")
-            logged.innerHTML=`<h1 class="text-center mt-5 fs-custom">Benvenuto/a</h1>`
+            logged.classList.remove('d-none')
             document.getElementById('log-in-card').classList.add('d-none')
         } else {
             console.log("Accesso Negato")
@@ -35,20 +35,35 @@ logInButton.addEventListener('click', function(){
 // RECUPERO IL PULSANTE PER INIZIARE A "GIOCARE"
 const startPlay = document.getElementById('diceStart');
 
+// VARIABILE DI CONTROLLO O FLAG 
+let gamePlayed = false;
 
 // DETERMINO CHE GLI EVENTI AVVENGANO AL CLICK DEL PULSANTE
 startPlay.addEventListener('click', function(){
     // DEFINISCO LE VARIABILI PER IL LANCIO DEI DADI
     let userDice = Math.floor((Math.random() * 6 + 1));
     let computerDice = Math.floor((Math.random() * 6 + 1));
-    
+
     // DEFINISCO LE CONDIZIONI DI VITTORIA O DI SCONFITTA
     if (userDice > computerDice){
         console.log('Hai vinto')
+        document.getElementById('gameOutput').innerHTML=`<p class="text-center">Il tuo punteggio è ${userDice} quell del computer è ${computerDice}. <span class="text-success">COMPLIMENTI HAI VINTO</span></p>
+                        <h3 class="text-center mt-5">GIUBILO-GAUDIO-FESTA</h3>`
     } else if (userDice < computerDice){
         console.log('Hai perso')
+        document.getElementById('gameOutput').innerHTML=`<p class="text-center">Il tuo punteggio è ${userDice} quell del computer è ${computerDice}. <span class="text-danger">hai perso...</span></p>`
     } else {
         console.log('Pareggio')
+        document.getElementById('gameOutput').innerHTML=`<p class="text-center">Il tuo punteggio di entrambi è ${userDice}. <span class="text-warning">Avete Pareggiato</span></p>`
     }
 
+
+
+    // CAMBIO IL TESTO NELL BOTTONE DOPO IL PRIMO LANCIO
+    if(gamePlayed === true){
+        startPlay.textContent = 'Gioca ancora';
+    } else {
+        // non capisco come posso triggerarlo subito dopo il primo lancio
+        gamePlayed = true 
+    }
 })
