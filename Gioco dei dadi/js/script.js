@@ -35,3 +35,7 @@ logInButton.addEventListener('click', function(){
 // RECUPERO IL PULSANTE PER INIZIARE A "GIOCARE"
 const startPlay = document.getElementById('diceStart');
 
+// DEFINISCO LE VARIABILI PER IL LANCIO DEI DADI
+let userDice = Math.floor((Math.random() * 6 + 1));
+let computerDice = Math.floor((Math.random() * 6 + 1));
+
